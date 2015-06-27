@@ -1,7 +1,7 @@
 require('node-jsx').install()
 
 var express = require('express');
-
+var opn     = require('opn');
 var React   = require('react');
 var Page    = require("./page.js");
 
@@ -13,4 +13,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(3000,function(){
+	opn('http://localhost:3000');
 } );

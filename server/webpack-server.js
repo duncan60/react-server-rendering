@@ -4,7 +4,6 @@ var Webpack = require('webpack'),
     path = require('path'),
     fs = require('fs'),
     mainPath = path.resolve(__dirname, '..', 'app', 'app.js');
-var opn     = require('opn');
 module.exports = function() {
     var bundleStart = null;
     var compiler = Webpack(webpackConfig);
@@ -16,7 +15,7 @@ module.exports = function() {
 
     compiler.plugin('done', function() {
         console.log('Bundled in ' + (Date.now() - bundleStart) + 'ms!');
-        opn('http://localhost:3000');
+        
     });
 
     var bundler = new WebpackDevServer(compiler, {
