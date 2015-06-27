@@ -2,7 +2,11 @@
   "name": "react-server-example",
   "version": "1.0.6",
   "description": "A very simple implementation of server-side React rendering",
-  "main": "server.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --progress && node server",
+    "production": "webpack -p --progress && node server"
+  },
   "repository": "mhart/react-server-example",
   "keywords": [
     "react",
@@ -13,8 +17,16 @@
   "author": "Michael Hart <michael.hart.au@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "style-loader": "~0.6.3",
+    "url-loader": "~0.5.5",
+    "file-loader": "~0.5.1",
+    "envify": "~1.2.1",
     "express": "^4.13.0",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "css-loader": "~0.7.0",
+    "webpack": "~1.3.1-beta7",
+    "jsx-loader": "~0.10.2",
+    "json-loader": "~0.5.1"
   },
   "devDependencies": {
     "node-jsx": "^0.13.3"
