@@ -5,30 +5,33 @@ var commonLoaders = [
 	{ test: /\.png$/, loader: "url-loader" },
 	{ test: /\.jpg$/, loader: "file-loader" },
 ];
-var assetsPath = path.join(__dirname, "public", "assets");
-var publicPath = "assets/";
+
+var buildPath = path.resolve(__dirname, 'server', 'build');
+var mainPath = path.resolve(__dirname, 'app', 'entry.js');
+console.log('>>>>mainPath', mainPath);
+console.log('>>>>buildPath', buildPath);
 
 module.exports = [
 	{
 		// The configuration for the client
 		name: "browser",
-		entry: "./app/entry.js",
+		entry: {
+			app: [
+            'webpack/hot/dev-server',
+            'webpack-dev-server/client?http://localhost:8080',
+            mainPath
+        ]
+		},
 		output: {
-			path: assetsPath,
-			filename: "[hash].js",
-			publicPath: publicPath
+			path: buildPath,
+			filename: "bundle.js",
+			publicPath: '/build/'
 		},
 		module: {
 			loaders: commonLoaders.concat([
 				{ test: /\.css$/, loader: "style-loader!css-loader" },
 			])
 		},
-		plugins: [
-			function(compiler) {
-				this.plugin("done", function(stats) {
-					require("fs").writeFileSync(path.join(__dirname, "server", "stats.generated.json"), JSON.stringify(stats.toJson()));
-				});
-			}
-		]
+		plugins: []
 	}
 ];

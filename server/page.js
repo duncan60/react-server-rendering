@@ -14,7 +14,7 @@ var AppPage = React.createClass({
         			<div id="content">
         				server render
         			</div>
-        			<script src="app/entry.js"></script>
+        			<script src="//localhost:8080/build/bundle.js"></script>
         		</body>
         	</html>
         );
