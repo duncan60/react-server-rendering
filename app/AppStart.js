@@ -5,6 +5,7 @@ var HelloWorld = require('./Helloworld');
 var AppStart = React.createClass({
 
     render: function() {
+    	console.log('AppStart')
         return (
             <div>
                 <HelloWorld />
