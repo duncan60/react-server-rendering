@@ -1,7 +1,7 @@
 var React = require("react");
-var AppStart = require("./AppStart");
+var Start = require("./start");
 React.render(
-	<AppStart  />,
+	<Start  />,
 	document.getElementById("content")
 );
 

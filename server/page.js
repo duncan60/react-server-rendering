@@ -1,6 +1,5 @@
 /** @jsx React.DOM */
 var React = require("react");
-var AppStart = require("../app/AppStart");
 
 var AppPage = React.createClass({
 
@@ -23,7 +22,7 @@ var AppPage = React.createClass({
         			<div id="content">
         				server render
         			</div>
-        			<script src="//localhost:8080/build/bundle.js"></script>
+        			<script src={this.props.jsPath}></script>
         		</body>
         	</html>
         );

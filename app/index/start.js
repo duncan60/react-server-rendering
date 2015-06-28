@@ -1,19 +1,17 @@
 var React = require('react');
-var HelloWorld = require('./Helloworld');
+var Page = require('./page');
 
-var AppStart = React.createClass({
-
+var Start = React.createClass({
     render: function() {
-    	console.log('AppStart')
         return (
             <div>
-                <HelloWorld />
+                <Page />
             </div>
         );
     }
 });
 
-module.exports = AppStart;
+module.exports = Start;
 
 // if (typeof window !== 'undefined') {
 //   window.onload = function() {

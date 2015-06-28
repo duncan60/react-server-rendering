@@ -1,17 +1,17 @@
 var React = require('react');
 
-var  HelloWorld = React.createClass({
+var  Page = React.createClass({
 	testClick: function() {
-		console.log('testClick');
+		console.log('Page B click');
 	},
 	render: function() {
 		return (
 			<div>
-				Hello React Render Node Server!!!
+				Hello Page B!!!
 				<a onClick={this.testClick}> click me</a>
 			</div>
 		);
 	}
 });
 
-module.exports = HelloWorld;
+module.exports = Page;

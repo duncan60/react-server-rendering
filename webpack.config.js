@@ -7,22 +7,34 @@ var commonLoaders = [
 ];
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'server', 'build');
-var mainPath = path.resolve(__dirname, 'app', 'entry.js');
+var indexPath = path.resolve(__dirname, 'app', 'index', 'entry.js');
+var pageAPath = path.resolve(__dirname, 'app', 'pageA', 'entry.js');
+var pageBPath = path.resolve(__dirname, 'app', 'pageB', 'entry.js');
 
 module.exports = [
 	{
 		// The configuration for the client
 		name: "browser",
 		entry: {
-			app: [
-            'webpack/hot/dev-server',
-            'webpack-dev-server/client?http://localhost:8080',
-            mainPath
-        ]
+			index: [
+	            'webpack/hot/dev-server',
+	            'webpack-dev-server/client?http://localhost:8080',
+	            indexPath
+	        ],
+	        pageA: [
+	            'webpack/hot/dev-server',
+	            'webpack-dev-server/client?http://localhost:8080',
+	            pageAPath
+	        ],
+	        pageB: [
+	            'webpack/hot/dev-server',
+	            'webpack-dev-server/client?http://localhost:8080',
+	            pageBPath
+	        ]
 		},
 		output: {
 			path: buildPath,
-			filename: "bundle.js",
+			filename: "[name].js",
 			publicPath: '/build/'
 		},
 		module: {
