@@ -3,7 +3,7 @@ require('node-jsx').install();
 import express from 'express';
 import opn from 'opn';
 import React from 'react';
-import Page from './page.js';
+import DefaultPage from './default-page';
 import bundle from'./webpack-server';
 
 let app = express();
@@ -13,7 +13,7 @@ bundle();
 let renderPage = (entryPath) => {
     return React.renderToString(
                 React.createElement(
-                    Page,
+                    DefaultPage,
                     {jsPath: entryPath}
                 )
             )
