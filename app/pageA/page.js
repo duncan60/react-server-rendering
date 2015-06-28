@@ -5,19 +5,19 @@ class Page extends BaseComponent {
     constructor(props) {
         super(props);
         this._bind(
-        	'_testClick'
+            '_testClick'
         );
     }
     _testClick() {
-		console.log('pageA click');
-	}
+        console.log('pageA click');
+    }
     render() {
         return (
             <div>
-				Hello PageA!!!
-				<CommonChild />
-				<a onClick={this._testClick}> click me</a>
-			</div>
+                Hello PageA!!!
+                <CommonChild />
+                <a onClick={this._testClick}> click me</a>
+            </div>
         );
     }
 }

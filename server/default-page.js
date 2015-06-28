@@ -4,14 +4,14 @@ class DefaultPage extends React.Component {
 
     render() {
         return (
-        	<html>
-        		<head>
+            <html>
+                <head>
                     <meta charset="utf-8" />
                     <title>starter-et-app</title>
                     <meta name="description" content="" />
                     <meta name="viewport" content="width=device-width" />
-        		</head>
-        		<body>
+                </head>
+                <body>
                     <header>
                         <h1>react server rendering</h1>
                         <nav>
@@ -22,11 +22,11 @@ class DefaultPage extends React.Component {
                             </ul>
                         </nav>
                     </header>
-        			<div id="content"></div>
-        			<script src="//localhost:8080/build/common.js"></script>
+                    <div id="content"></div>
+                    <script src="//localhost:8080/build/common.js"></script>
                     <script src={this.props.jsPath}></script>
-        		</body>
-        	</html>
+                </body>
+            </html>
         );
     }
 };

@@ -4,9 +4,7 @@ import BaseComponent from '../base-component';
 class CommonChild extends BaseComponent {
     constructor(props) {
         super(props);
-        this._bind(
-
-        );
+        this._bind();
     }
     render() {
         return (
