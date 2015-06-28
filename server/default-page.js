@@ -7,7 +7,7 @@ class DefaultPage extends React.Component {
             <html>
                 <head>
                     <meta charset="utf-8" />
-                    <title>starter-et-app</title>
+                    <title>react server rendering</title>
                     <meta name="description" content="" />
                     <meta name="viewport" content="width=device-width" />
                 </head>
