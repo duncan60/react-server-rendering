@@ -11,6 +11,15 @@ var AppPage = React.createClass({
 
         		</head>
         		<body>
+                    <header>
+                        <nav>
+                            <ul>
+                                <li><a href="/">index</a></li>
+                                <li><a href="/pageA">PageA</a></li>
+                                <li><a href="/pageB">pageB</a></li>
+                            </ul>
+                        </nav>
+                    </header>
         			<div id="content">
         				server render
         			</div>
