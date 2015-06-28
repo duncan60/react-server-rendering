@@ -1,4 +1,5 @@
 var React = require('react');
+var CommonChild = require('../common/common-child');
 
 var  Page = React.createClass({
 	testClick: function() {
@@ -8,6 +9,7 @@ var  Page = React.createClass({
 		return (
 			<div>
 				Hello Page A!!!
+				<CommonChild />
 				<a onClick={this.testClick}> click me</a>
 			</div>
 		);

@@ -22,7 +22,8 @@ var AppPage = React.createClass({
         			<div id="content">
         				server render
         			</div>
-        			<script src={this.props.jsPath}></script>
+        			<script src="//localhost:8080/build/common.js"></script>
+                    <script src={this.props.jsPath}></script>
         		</body>
         	</html>
         );

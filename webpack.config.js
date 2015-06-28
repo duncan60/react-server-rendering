@@ -1,5 +1,5 @@
 var path = require("path");
-
+var webpack = require('webpack')
 var commonLoaders = [
 	{ test: /\.js$/, loader: "jsx-loader" },
 	{ test: /\.png$/, loader: "url-loader" },
@@ -47,6 +47,8 @@ module.exports = [
 	            }
 			])
 		},
-		plugins: []
+		plugins: [
+			new webpack.optimize.CommonsChunkPlugin('common.js')
+		]
 	}
 ];
