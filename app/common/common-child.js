@@ -1,13 +1,20 @@
-var React = require('react');
+import React from 'react';
+import BaseComponent from '../base-component';
 
-var  CommonChild = React.createClass({
-	render: function() {
-		return (
-			<div>
-				I am a CommonChild
-			</div>
-		);
-	}
-});
+class CommonChild extends BaseComponent {
+    constructor(props) {
+        super(props);
+        this._bind(
 
-module.exports = CommonChild;
+        );
+    }
+    render() {
+        return (
+            <div className="common-child">
+                I am a CommonChild
+            </div>
+        );
+    }
+}
+export default CommonChild;
+

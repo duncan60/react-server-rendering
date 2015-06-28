@@ -1,20 +1,19 @@
-var React = require('react');
-var Page = require('./page');
+import React from 'react';
+import BaseComponent from '../base-component';
+import Page from './page';
 
-var Start = React.createClass({
-    render: function() {
+class Start extends BaseComponent {
+    constructor(props) {
+        super(props);
+    }
+    render() {
         return (
-            <div>
+            <div className="start">
                 <Page />
             </div>
         );
     }
-});
+}
 
-module.exports = Start;
+export default Start;
 
-// if (typeof window !== 'undefined') {
-//   window.onload = function() {
-//     React.renderComponent(AppStart(), document);
-//   }
-// }

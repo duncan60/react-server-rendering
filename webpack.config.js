@@ -34,8 +34,7 @@ module.exports = [
 		},
 		output: {
 			path: buildPath,
-			filename: "[name].js",
-			publicPath: '/build/'
+			filename: "[name].js"
 		},
 		module: {
 			loaders: commonLoaders.concat([

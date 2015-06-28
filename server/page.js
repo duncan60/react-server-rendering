@@ -1,16 +1,19 @@
-/** @jsx React.DOM */
-var React = require("react");
+import React from 'react';
 
-var AppPage = React.createClass({
+class Page extends React.Component {
 
-    render: function() {
+    render() {
         return (
         	<html>
         		<head>
-
+                    <meta charset="utf-8" />
+                    <title>starter-et-app</title>
+                    <meta name="description" content="" />
+                    <meta name="viewport" content="width=device-width" />
         		</head>
         		<body>
                     <header>
+                        <h1>react server rendering</h1>
                         <nav>
                             <ul>
                                 <li><a href="/">index</a></li>
@@ -19,16 +22,14 @@ var AppPage = React.createClass({
                             </ul>
                         </nav>
                     </header>
-        			<div id="content">
-        				server render
-        			</div>
+        			<div id="content"></div>
         			<script src="//localhost:8080/build/common.js"></script>
                     <script src={this.props.jsPath}></script>
         		</body>
         	</html>
         );
     }
-});
+};
 
 
-module.exports = AppPage;
+export default Page;

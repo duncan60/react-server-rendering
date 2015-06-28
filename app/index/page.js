@@ -1,19 +1,25 @@
-var React = require('react');
-var CommonChild = require('../common/common-child');
-
-var  Page = React.createClass({
-	testClick: function() {
+import React from 'react';
+import BaseComponent from '../base-component';
+import CommonChild from '../common/common-child';
+class Page extends BaseComponent {
+    constructor(props) {
+        super(props);
+        this._bind(
+        	'_testClick'
+        );
+    }
+    _testClick() {
 		console.log('Index page click');
-	},
-	render: function() {
-		return (
-			<div>
+	}
+    render() {
+        return (
+            <div>
 				Hello INDEX!!!
 				<CommonChild />
-				<a onClick={this.testClick}> click me</a>
+				<a onClick={this._testClick}> click me</a>
 			</div>
-		);
-	}
-});
+        );
+    }
+}
 
-module.exports = Page;
+export default Page;

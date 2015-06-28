@@ -1,5 +1,6 @@
-var React = require("react");
-var Start = require("./start");
+import React from 'react';
+import Start from './start';
+
 React.render(
 	<Start  />,
 	document.getElementById("content")

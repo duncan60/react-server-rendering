@@ -1,12 +1,12 @@
-var Webpack = require('webpack'),
-    WebpackDevServer = require('webpack-dev-server'),
-    webpackConfig = require('../webpack.config.js'),
-    path = require('path'),
-    fs = require('fs');
-   // mainPath = path.resolve(__dirname, '..', 'app', 'app.js');
+var webpack          = require('webpack'),
+    webpackDevServer = require('webpack-dev-server'),
+    webpackConfig    = require('../webpack.config.js'),
+    path             = require('path'),
+    fs               = require('fs');
+
 module.exports = function() {
     var bundleStart = null;
-    var compiler = Webpack(webpackConfig);
+    var compiler = webpack(webpackConfig);
 
     compiler.plugin('compile', function() {
         console.log('Bundling...');
@@ -15,12 +15,10 @@ module.exports = function() {
 
     compiler.plugin('done', function() {
         console.log('Bundled in ' + (Date.now() - bundleStart) + 'ms!');
-        
     });
 
-    var bundler = new WebpackDevServer(compiler, {
+    var bundler = new webpackDevServer(compiler, {
         publicPath: '/build/',
-        progress: true,
         hot: true,
         quiet: false,
         noInfo: true,
