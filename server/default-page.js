@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Page extends React.Component {
+class DefaultPage extends React.Component {
 
     render() {
         return (
@@ -32,4 +32,4 @@ class Page extends React.Component {
 };
 
 
-export default Page;
+export default DefaultPage;
