@@ -1,46 +1,36 @@
-require('node-jsx').install()
+require('node-jsx').install();
 
-var express = require('express');
-var opn     = require('opn');
-var React   = require('react');
-var Page    = require("./page.js");
+import express from 'express';
+import opn from 'opn';
+import React from 'react';
+import Page from './page.js';
+import bundle from'./webpack-server';
 
-var app = express();
-var bundle = require('./webpack-server');
-    bundle();
-app.get('/', function(req, res) {
-   res.end(
-   		React.renderToString(
-   			React.createElement(
-   				Page,
-   				{jsPath: '//localhost:8080/build/index.js'}
-   			)
-   		)
-   );
+let app = express();
+
+bundle();
+
+let renderPage = (entryPath) => {
+    return React.renderToString(
+                React.createElement(
+                    Page,
+                    {jsPath: entryPath}
+                )
+            )
+}
+
+app.get('/', (req, res) => {
+   res.end(renderPage('//localhost:8080/build/index.js'));
 });
 
-app.get('/PageA', function(req, res) {
-   res.end(
-   		React.renderToString(
-   			React.createElement(
-   				Page,
-   				{jsPath: '//localhost:8080/build/pageA.js'}
-   			)
-   		)
-   );
+app.get('/PageA', (req, res) => {
+    res.end(renderPage('//localhost:8080/build/pageA.js'));
 });
 
-app.get('/pageB', function(req, res) {
-   res.end(
-   		React.renderToString(
-   			React.createElement(
-   				Page,
-   				{jsPath: '//localhost:8080/build/pageB.js'}
-   			)
-   		)
-   );
+app.get('/pageB', (req, res) => {
+    res.end(renderPage('//localhost:8080/build/pageB.js'));
 });
 
-app.listen(3000,function(){
-	opn('http://localhost:3000');
+app.listen(3000, () => {
+   opn('http://localhost:3000');
 } );
